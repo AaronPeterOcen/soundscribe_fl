@@ -1,40 +1,47 @@
 import 'package:flutter/material.dart';
+import 'package:soundscribe_fl/screens/shazam_ui.dart';
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
+class HomeScreen extends StatefulWidget {
   @override
-  State<MyHomePage> createState() => _MyHomePageState();
+  _HomeScreenState createState() => _HomeScreenState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _HomeScreenState extends State<HomeScreen>
+    with SingleTickerProviderStateMixin {
+  late TabController _tabController;
+
+  @override
+  void initState() {
+    super.initState();
+    _tabController = TabController(length: 3, vsync: this);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primary,
-
-        title: Center(child: Text("SoundScribe")),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'Welcome to SoundScribe!',
-              style: Theme.of(context).textTheme.headlineMedium,
-            ),
-            const SizedBox(height: 20),
-            ElevatedButton(
-              onPressed: () {
-                // Navigate to the recording screen
-              },
-              child: const Text('Start Recording'),
-            ),
+        title: Text('My Audio Apps'),
+        bottom: TabBar(
+          controller: _tabController,
+          tabs: [
+            Tab(icon: Icon(Icons.home), text: 'Home'),
+            Tab(icon: Icon(Icons.music_note), text: 'Shazam'),
+            Tab(icon: Icon(Icons.audio_file), text: 'SoundScribe'),
           ],
         ),
+      ),
+      body: TabBarView(
+        controller: _tabController,
+        children: [
+          // Home Tab
+          Center(child: Text('Welcome to My Audio Apps')),
+
+          // Shazam Tab - Your clone directly embedded
+          ShazamUi(),
+
+          // SoundScribe Tab
+          Center(child: Text('SoundScribe App')),
+        ],
       ),
     );
   }
