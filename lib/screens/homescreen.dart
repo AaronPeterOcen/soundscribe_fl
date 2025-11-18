@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:soundscribe_fl/screens/shazam_ui.dart';
 
 class HomeScreen extends StatefulWidget {
+  const HomeScreen({super.key});
+
   @override
   _HomeScreenState createState() => _HomeScreenState();
 }
