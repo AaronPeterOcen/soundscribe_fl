@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:soundscribe_fl/screens/lyric_search.dart';
 import 'package:soundscribe_fl/screens/shazam_ui.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -42,7 +43,9 @@ class _HomeScreenState extends State<HomeScreen>
           ShazamUi(),
 
           // SoundScribe Tab
-          Center(child: Text('SoundScribe App')),
+          // Center(child: Text('SoundScribe App')),
+          LyricsSearch(),
+          // GeniusSearchScreen(),
         ],
       ),
     );
