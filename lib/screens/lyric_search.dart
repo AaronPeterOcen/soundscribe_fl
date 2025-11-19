@@ -94,6 +94,10 @@ class _LyricsSearchState extends State<LyricsSearch> {
                       width: double.infinity,
                       child: ElevatedButton(
                         onPressed: _isLoading ? null : _searchLyrics,
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.deepPurple,
+                          padding: EdgeInsets.symmetric(vertical: 12),
+                        ),
                         child: _isLoading
                             ? SizedBox(
                                 height: 20,
@@ -106,10 +110,6 @@ class _LyricsSearchState extends State<LyricsSearch> {
                                 ),
                               )
                             : Text('Search Lyrics'),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.deepPurple,
-                          padding: EdgeInsets.symmetric(vertical: 12),
-                        ),
                       ),
                     ),
                   ],

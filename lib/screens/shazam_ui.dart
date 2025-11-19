@@ -59,22 +59,22 @@ class _ShazamUiState extends State<ShazamUi> {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconButton(
-            icon: Icon(Icons.settings, color: Colors.white),
-            onPressed: () {},
-          ),
-          Text(
-            'Shazam',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          IconButton(
-            icon: Icon(Icons.history, color: Colors.white),
-            onPressed: () {},
-          ),
+          // IconButton(
+          //   icon: Icon(Icons.settings, color: Colors.white),
+          //   onPressed: () {},
+          // ),
+          // Text(
+          //   'Shazam',
+          //   style: TextStyle(
+          //     color: Colors.white,
+          //     fontSize: 24,
+          //     fontWeight: FontWeight.bold,
+          //   ),
+          // ),
+          // IconButton(
+          //   icon: Icon(Icons.history, color: Colors.white),
+          //   onPressed: () {},
+          // ),
         ],
       ),
     );
