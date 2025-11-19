@@ -174,10 +174,10 @@ class _ShazamUiState extends State<ShazamUi> {
             icon: Icon(Icons.library_music, color: Colors.grey[600]),
             onPressed: () {},
           ),
-          IconButton(
-            icon: Icon(Icons.person, color: Colors.grey[600]),
-            onPressed: () {},
-          ),
+          // IconButton(
+          //   icon: Icon(Icons.person, color: Colors.grey[600]),
+          //   onPressed: () {},
+          // ),
         ],
       ),
     );

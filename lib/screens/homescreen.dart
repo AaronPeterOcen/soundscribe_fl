@@ -23,7 +23,16 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('My Audio Apps'),
+        title: Center(
+          child: Text(
+            'My Audio Apps',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 24,
+              color: Colors.indigoAccent,
+            ),
+          ),
+        ),
         bottom: TabBar(
           controller: _tabController,
           tabs: [
