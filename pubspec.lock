@@ -214,6 +214,14 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
+  flutter_audio_capture:
+    dependency: "direct main"
+    description:
+      name: flutter_audio_capture
+      sha256: "873fc96bd2e0033d0f14a41a79f7ed44ee52a32b319eab01a4192d8bb272431a"
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.1.11"
   flutter_cache_manager:
     dependency: transitive
     description:
@@ -222,6 +230,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "3.3.1"
+  flutter_custom_paint_plus:
+    dependency: "direct main"
+    description:
+      name: flutter_custom_paint_plus
+      sha256: "3ed470b087db07fc7ea74bd23d0fe48111188672c9abdb2fb27cbadd5ef8f957"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.1"
+  flutter_fft:
+    dependency: "direct main"
+    description:
+      name: flutter_fft
+      sha256: f2701ea4da2a42cbc6dbb14b0872a6b77056901e34ed7576e2fefbf557b4f353
+      url: "https://pub.dev"
+    source: hosted
+    version: "1.0.2+6"
   flutter_lints:
     dependency: "direct dev"
     description:
