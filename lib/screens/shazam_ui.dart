@@ -17,12 +17,12 @@ class _ShazamUiState extends State<ShazamUi> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.black54,
       body: SafeArea(
         child: Column(
           children: [
             // Header
-            _buildHeader(),
+            // _buildHeader(),
 
             // Main Content
             Expanded(
@@ -49,33 +49,6 @@ class _ShazamUiState extends State<ShazamUi> {
             _buildBottomNavigation(),
           ],
         ),
-      ),
-    );
-  }
-
-  Widget _buildHeader() {
-    return Padding(
-      padding: EdgeInsets.all(16.0),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
-          // IconButton(
-          //   icon: Icon(Icons.settings, color: Colors.white),
-          //   onPressed: () {},
-          // ),
-          // Text(
-          //   'Shazam',
-          //   style: TextStyle(
-          //     color: Colors.white,
-          //     fontSize: 24,
-          //     fontWeight: FontWeight.bold,
-          //   ),
-          // ),
-          // IconButton(
-          //   icon: Icon(Icons.history, color: Colors.white),
-          //   onPressed: () {},
-          // ),
-        ],
       ),
     );
   }
@@ -167,11 +140,11 @@ class _ShazamUiState extends State<ShazamUi> {
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.search, color: Colors.grey[600]),
+            icon: Icon(Icons.search, color: Colors.white),
             onPressed: () {},
           ),
           IconButton(
-            icon: Icon(Icons.library_music, color: Colors.grey[600]),
+            icon: Icon(Icons.library_music, color: Colors.white),
             onPressed: () {},
           ),
           // IconButton(
