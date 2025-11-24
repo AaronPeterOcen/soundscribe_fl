@@ -23,13 +23,15 @@ class _HomeScreenState extends State<HomeScreen>
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.deepPurpleAccent,
+        foregroundColor: Colors.white,
         title: Center(
           child: Text(
             'My Audio Apps',
             style: TextStyle(
               fontWeight: FontWeight.bold,
               fontSize: 24,
-              color: Colors.indigoAccent,
+              color: Colors.purpleAccent,
             ),
           ),
         ),
@@ -46,7 +48,16 @@ class _HomeScreenState extends State<HomeScreen>
         controller: _tabController,
         children: [
           // Home Tab
-          Center(child: Text('Welcome to My Audio Apps')),
+          Center(
+            child: Text(
+              'Welcome to My Audio Apps',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.purpleAccent,
+              ),
+            ),
+          ),
 
           // Shazam Tab - Your clone directly embedded
           ShazamUi(),
