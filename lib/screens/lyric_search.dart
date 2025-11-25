@@ -236,14 +236,7 @@ class _LyricsSearchState extends State<LyricsSearch>
                               borderRadius: BorderRadius.circular(12),
                               boxShadow: [
                                 BoxShadow(
-                                  // ignore: deprecated_member_use
-                                  color: const Color.fromARGB(
-                                    255,
-                                    200,
-                                    172,
-                                    247,
-                                    // ignore: deprecated_member_use
-                                  ).withOpacity(0.3),
+                                  color: Colors.deepPurple.withOpacity(0.3),
                                   blurRadius: 15,
                                   offset: Offset(0, 8),
                                 ),
