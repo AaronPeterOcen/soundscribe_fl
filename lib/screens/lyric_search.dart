@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:soundscribe_fl/services/lyric_service.dart';
 
 class LyricsSearch extends StatefulWidget {
+  const LyricsSearch({super.key});
+
   @override
   _LyricsSearchState createState() => _LyricsSearchState();
 }
@@ -112,7 +114,6 @@ class _LyricsSearchState extends State<LyricsSearch>
           padding: EdgeInsets.all(20.0),
           child: Column(
             children: [
-              // Search Form with Glassmorphism Effect
               FadeTransition(
                 opacity: _fadeAnimation,
                 child: SlideTransition(
@@ -230,6 +231,7 @@ class _LyricsSearchState extends State<LyricsSearch>
                                     200,
                                     172,
                                     247,
+                                    // ignore: deprecated_member_use
                                   ).withOpacity(0.3),
                                   blurRadius: 15,
                                   offset: Offset(0, 8),
