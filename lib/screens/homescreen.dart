@@ -49,7 +49,7 @@ class _HomeScreenState extends State<HomeScreen>
           tabs: [
             Tab(icon: Icon(Icons.home), text: 'Home'),
             Tab(icon: Icon(Icons.music_note), text: 'Shazam'),
-            Tab(icon: Icon(Icons.lyrics), text: 'Lyrics'),
+            Tab(icon: Icon(Icons.lyrics_outlined), text: 'Lyrics'),
           ],
         ),
       ),

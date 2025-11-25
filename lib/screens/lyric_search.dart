@@ -112,7 +112,7 @@ class _LyricsSearchState extends State<LyricsSearch>
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.all(20.0),
-          child: Column(
+          child: ListView(
             children: [
               FadeTransition(
                 opacity: _fadeAnimation,
