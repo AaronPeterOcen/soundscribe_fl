@@ -7,6 +7,7 @@ environment:
   sdk: ">=3.9.2 <4.0.0"
 
 dependencies:
+  chordify_lyrics: ^1.0.3
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
@@ -25,7 +26,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-
   # fonts:
   #   - family: MaterialIcons
   #     fonts:

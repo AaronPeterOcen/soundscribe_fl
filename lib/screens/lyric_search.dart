@@ -44,7 +44,9 @@ class _LyricsSearchState extends State<LyricsSearch>
 
   void _searchLyrics() async {
     if (_artistController.text.isEmpty || _titleController.text.isEmpty) {
-      _showSnackBar('Please enter both artist and song title', Colors.orange);
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text('Please enter both artist and song title')),
+      );
       return;
     }
 
@@ -53,19 +55,28 @@ class _LyricsSearchState extends State<LyricsSearch>
       _lyrics = '';
     });
 
-    final lyrics = await LyricService.getLyrics(
-      _artistController.text.trim(),
-      _titleController.text.trim(),
-    );
+    try {
+      final lyrics = await LyricService.getLyrics(
+        _artistController.text.trim(),
+        _titleController.text.trim(),
+      );
 
-    setState(() {
-      _lyrics = lyrics;
-      _isLoading = false;
-    });
-
-    // Animate when new lyrics come in
-    _animationController.reset();
-    _animationController.forward();
+      // Check if widget is still mounted before calling setState
+      if (mounted) {
+        setState(() {
+          _lyrics = lyrics;
+          _isLoading = false;
+        });
+      }
+    } catch (e) {
+      // Check if widget is still mounted before calling setState
+      if (mounted) {
+        setState(() {
+          _lyrics = 'Error: $e';
+          _isLoading = false;
+        });
+      }
+    }
   }
 
   void _clearSearch() {
