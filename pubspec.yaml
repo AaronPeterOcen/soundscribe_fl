@@ -7,17 +7,22 @@ environment:
   sdk: ">=3.9.2 <4.0.0"
 
 dependencies:
+  cached_network_image: ^3.3.1
   chordify_lyrics: ^1.0.3
   cupertino_icons: ^1.0.8
   flutter:
     sdk: flutter
+  # flutter_fft: ^1.0.2+6
   font_awesome_flutter: ^10.12.0
+  html: ^0.15.6
   http: ^1.6.0
+  http_io: ^3.0.0
   just_audio: ^0.10.5
-  material_design: ^0.28.1
+  # lyricfy: any
   permission_handler: ^11.0.1
   record: ^6.1.2
   speech_to_text: ^7.3.0
+  url_launcher: ^6.3.2
 
 dev_dependencies:
   flutter_lints: ^5.0.0
@@ -26,7 +31,3 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
-  # fonts:
-  #   - family: MaterialIcons
-  #     fonts:
-  #       - asset: fonts/MaterialIcons-Regular.ttf

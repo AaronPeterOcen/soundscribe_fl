@@ -481,100 +481,86 @@ class _LyricsSearchState extends State<LyricsSearch>
   }
 
   Widget _buildLyricsContent() {
-    return FadeTransition(
-      opacity: _fadeAnimation,
-      child: SlideTransition(
-        position: _slideAnimation,
-        child: Container(
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.circular(20),
-            boxShadow: [
-              BoxShadow(
-                color: Colors.black12,
-                blurRadius: 15,
-                offset: Offset(0, 5),
-              ),
-            ],
-          ),
-          child: Column(
-            children: [
-              // Song Header
-              Container(
-                width: double.infinity,
-                padding: EdgeInsets.all(20),
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    colors: [Colors.deepPurple.shade50, Colors.purple.shade50],
-                    begin: Alignment.topLeft,
-                    end: Alignment.bottomRight,
-                  ),
-                  borderRadius: BorderRadius.only(
-                    topLeft: Radius.circular(20),
-                    topRight: Radius.circular(20),
-                  ),
-                ),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Row(
-                      children: [
-                        Icon(
-                          Icons.music_note,
-                          color: Colors.deepPurple,
-                          size: 24,
-                        ),
-                        SizedBox(width: 8),
-                        Text(
-                          'Now Playing',
-                          style: TextStyle(
-                            fontSize: 14,
-                            fontWeight: FontWeight.w600,
-                            color: Colors.deepPurple.shade600,
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 8),
-                    Text(
-                      _titleController.text,
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.deepPurple.shade800,
-                      ),
-                    ),
-                    SizedBox(height: 4),
-                    Text(
-                      'by ${_artistController.text}',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.deepPurple.shade600,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+    final lines = _lyrics.split('\n');
 
-              // Lyrics Content
-              Expanded(
-                child: Padding(
-                  padding: EdgeInsets.all(20),
-                  child: SingleChildScrollView(
-                    child: SelectableText(
-                      _lyrics,
-                      style: TextStyle(
-                        fontSize: 16,
-                        height: 1.8,
-                        color: Colors.grey.shade800,
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-            ],
+    return SingleChildScrollView(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          for (int i = 0; i < lines.length; i++) _buildLyricLine(lines[i], i),
+          SizedBox(height: 20),
+          _buildLyricsFooter(),
+        ],
+      ),
+    );
+  }
+
+  Widget _buildLyricLine(String line, int index) {
+    final isSectionHeader =
+        line.trim().startsWith('[') && line.trim().endsWith(']');
+    final isEmptyLine = line.trim().isEmpty;
+
+    if (isEmptyLine) {
+      return SizedBox(height: 12);
+    }
+
+    if (isSectionHeader) {
+      return Container(
+        width: double.infinity,
+        margin: EdgeInsets.only(top: index > 0 ? 20 : 0, bottom: 8),
+        child: Text(
+          line,
+          style: TextStyle(
+            fontSize: 14,
+            fontWeight: FontWeight.bold,
+            color: Colors.deepPurple,
+            fontStyle: FontStyle.italic,
           ),
         ),
+      );
+    }
+
+    return Padding(
+      padding: EdgeInsets.symmetric(vertical: 2),
+      child: Text(
+        line,
+        style: TextStyle(fontSize: 16, height: 1.4, color: Colors.grey[800]),
+      ),
+    );
+  }
+
+  Widget _buildLyricsFooter() {
+    return Container(
+      padding: EdgeInsets.all(12),
+      decoration: BoxDecoration(
+        color: Colors.grey[50],
+        borderRadius: BorderRadius.circular(8),
+        border: Border.all(color: Colors.grey[300]!),
+      ),
+      child: Row(
+        children: [
+          Icon(Icons.audiotrack, size: 16, color: Colors.deepPurple),
+          SizedBox(width: 8),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  'Powered by Lyrics.ovh',
+                  style: TextStyle(
+                    fontSize: 12,
+                    fontWeight: FontWeight.w500,
+                    color: Colors.deepPurple,
+                  ),
+                ),
+                Text(
+                  'Lyrics may vary from the original recording',
+                  style: TextStyle(fontSize: 10, color: Colors.grey[600]),
+                ),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }

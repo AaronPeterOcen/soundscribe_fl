@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.indigoAccent),
         useMaterial3: true,
-        // fontFamily: "ubuntu",
+        fontFamily: "ubuntu",
         primarySwatch: Colors.indigo,
         // scaffoldBackgroundColor: Colors.white,
       ),
