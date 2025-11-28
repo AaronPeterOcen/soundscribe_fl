@@ -11,32 +11,38 @@
     <br> 
 </p>
 
-## 📝 Table of Contents
+# SoundScribe
 
-- [About](#about)
-- [Getting Started](#getting_started)
-- [Deployment](#deployment)
-- [Usage](#usage)
-- [Built Using](#built_using)
-- [TODO](../TODO.md)
-- [Contributing](../CONTRIBUTING.md)
-- [Authors](#authors)
-- [Acknowledgments](#acknowledgement)
+SoundScribe is a Flutter application for music identification and lyrics discovery. Use it to identify songs playing around you, view basic song info, and search for lyrics by artist and title.
 
-## 🧐 About <a name = "about"></a>
+## Key features
 
-Write about 1-2 paragraphs describing the purpose of your project.
+- Song identification (microphone capture + matching UI) — see the Shazam-like UI in the app.
+- Lyrics search by artist and title.
+- Cross-platform support: Android, iOS, macOS, Linux, Windows and Web (via Flutter).
+- Uses plugins for audio recording, speech-to-text, URL launching, HTTP I/O and more.
 
-## 🏁 Getting Started <a name = "getting_started"></a>
+## Project layout (important files)
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See [deployment](#deployment) for notes on how to deploy the project on a live system.
+- App entry: [`MyApp`](lib/main.dart) — [lib/main.dart](lib/main.dart)
+- Main UI: [`HomeScreen`](lib/screens/homescreen.dart) — [lib/screens/homescreen.dart](lib/screens/homescreen.dart)
+- Lyrics search screen: [`LyricsSearch`](lib/screens/lyric_search.dart) — [lib/screens/lyric_search.dart](lib/screens/lyric_search.dart)
+- Song identification UI: [`ShazamUi`](lib/screens/shazam_ui.dart) — [lib/screens/shazam_ui.dart](lib/screens/shazam_ui.dart)
+- Pub dependencies: [pubspec.yaml](pubspec.yaml)
+- Tests: [test/widget_test.dart](test/widget_test.dart)
 
-### Prerequisites
+## Prerequisites
 
-What things you need to install the software and how to install them.
+- Flutter SDK (stable). Project uses Dart SDK constraint: `>=3.9.2 <4.0.0` (see [pubspec.yaml](pubspec.yaml)).
+- Platform toolchains for targets you plan to build (Android SDK / Xcode / Visual Studio / GTK toolchain).
 
-```
-Give examples
+## Setup & run (development)
+
+1. Install Flutter and platform tools: https://flutter.dev/docs/get-started/install
+2. Fetch dependencies:
+
+```sh
+flutter pub get
 ```
 
 ### Installing
